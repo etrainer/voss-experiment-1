@@ -255,7 +255,7 @@ function processChangeSets(data, rev) {
    // console.log(historyText); 
     $('#history ol').append('<li class="historyItem">' + historyText + '</li>');
     var historyItem = new HistoryItem(new Date(), $(historyText).text());
-    historyArray.push(historyItem);
+//    historyArray.push(historyItem);
    // console.log('---------------------------------------');
 }
 

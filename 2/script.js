@@ -511,7 +511,7 @@ function saveHistory() {
                 form.setAttribute("method", "post");
                 form.setAttribute("action", "submit.php");
     
-                form.setAttribute("target", "submit");
+                //form.setAttribute("target", "submit");
 
                 var hiddenField = document.createElement("input");
                 hiddenField.setAttribute("type", "hidden");
@@ -532,7 +532,7 @@ function saveHistory() {
                 form.appendChild(hiddenFieldContent);
 
                 document.body.appendChild(form);
-                window.open('', 'submit');
+                //window.open('', 'submit');
     
                 form.submit();
             }

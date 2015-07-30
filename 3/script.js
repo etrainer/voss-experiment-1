@@ -488,7 +488,7 @@ function reviewHistory() {
                 form.setAttribute("method", "post");
                 form.setAttribute("action", "review.php");
 
-                form.setAttribute("target", "view");
+                //form.setAttribute("target", "view");
 
                 var hiddenField = document.createElement("input");
                 hiddenField.setAttribute("type", "hidden");
@@ -510,7 +510,7 @@ function reviewHistory() {
 
                 document.body.appendChild(form);
 
-                window.open('', 'view');
+                //window.open('', 'view');
 
                 form.submit();
             }

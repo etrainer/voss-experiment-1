@@ -1,0 +1,110 @@
+.nav a {
+    color: red;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 14pc 10px;
+    text-transform: uppercase;
+}
+
+.nav li {
+    display: inline;
+}
+
+
+#submit {
+    height: 40px;
+    width: 80px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+#search {
+    margin: 25px;
+}
+
+#search h1 {
+    font-family: Verdana, Arial, sans-serif;
+    text-align: center;    
+}
+
+
+table.navTable td {
+    text-align: center;
+}
+
+#search_button {
+    height: 35px;
+    width: 35px;
+    border-radius: 3px;
+    background-color: white;
+    background-image: url('mag.png');
+    display: inline-block;
+}
+
+#text_input {
+    border-radius: 3px;
+    padding-left: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    height: 35px;
+    margin: 0 auto;
+    display: table;
+    width: 55%;
+    border: 1px solid #888888;
+}
+
+span {
+    color: #000000;
+}
+
+.line-separator {
+    height: 1px;
+    margin: 10px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+#nav {
+    border:radius: 5px;
+}
+
+#back {
+    height: 100%;
+    width: 45%;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+
+#forward {
+    height: 100%;
+    width: 45%;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+}
+
+#results {
+    overflow-y: scroll;
+    height: 600px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+#history {
+    overflow-y: scroll;
+    height: 600px;
+}
+
+#history ol {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 12px;
+    list-style-type: decimal;
+}

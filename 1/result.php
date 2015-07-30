@@ -15,9 +15,15 @@
         //Loop backwards through all the <a> tags and replace them with their text content
         for ($i = $links->length - 1; $i >= 0; $i--) {
             $linkNode = $links->item($i);
+            /*if ($linkNode->hasAttribute('href'))
+                $linkNode->removeAttribute('href');
+            if ($linkNode->hasAttribute('onClick'))
+                $linkNode->removeAttribute('onClick');
+            */
             $linkText = trim($linkNode->textContent);
             $newTextNode = $xml->createTextNode($linkText);
             $linkNode->parentNode->replaceChild($newTextNode, $linkNode);
+            
         }
 
         echo $xml->saveHTML(); 

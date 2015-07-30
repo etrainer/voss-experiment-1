@@ -253,8 +253,8 @@ function processChangeSets(data, rev) {
     }    
     historyText +="<br/>At version " + rev;
    // console.log(historyText); 
-    $('#history ol').append('<li class="historyItem">' + historyText + '</li>');
-    var historyItem = new HistoryItem(new Date(), $(historyText).text());
+//    $('#history ol').append('<li class="historyItem">' + historyText + '</li>');
+//    var historyItem = new HistoryItem(new Date(), $(historyText).text());
 //    historyArray.push(historyItem);
    // console.log('---------------------------------------');
 }
@@ -498,7 +498,7 @@ function reviewHistory() {
 }
 
 function saveHistory() {
-    var answer = confirm('Are you sure? Clicking \"OK\" will send your description on for evaluation.');
+    var answer = confirm('Clicking \"OK\" will send your descriptions on for evaluation.');
     if (answer) {
         $.ajax({
             url: 'http://localhost:9001/api/1.2.8/getHTML?',

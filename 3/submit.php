@@ -10,6 +10,7 @@
             fwrite($myfile, $item . "\n");
         }
         echo "<h1>Data submitted successfully!</h1>";
+        echo "<p>You have completed the task. Please close your browser window.</p>";
         fclose($myfile);
     }
     else

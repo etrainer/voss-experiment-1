@@ -7,7 +7,6 @@
         $history = $_POST["historyItem"];
         if ($history == NULL) 
             fwrite($myfile, "All history removed.");
-        {
         else { 
             foreach ($history as $item) {
                 fwrite($myfile, $item . "\n");

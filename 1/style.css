@@ -12,8 +12,8 @@
 
 
 #submit {
-    height: 40px;
-    width: 150px;
+    height: 50px;
+    width: 200px;
     border-radius: 5px;
     display: block;
     margin: 0 auto;
@@ -28,7 +28,6 @@
     font-family: Verdana, Arial, sans-serif;
     text-align: center;    
 }
-
 
 table.navTable td {
     text-align: center;
@@ -89,16 +88,17 @@ span {
 
 #results {
     overflow-y: scroll;
-    height: 600px;
+    height: 550px;
     border-radius: 5px;
-    background-color: #f7f7f7;
     font-size: 14px;
     font-family: Arial, sans-serif;
+    margin: auto;
+    padding: 20px;
 }
 
 #history {
     overflow-y: scroll;
-    height: 600px;
+    height: 550px;
 }
 
 #history ol {

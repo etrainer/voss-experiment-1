@@ -88,16 +88,17 @@ span {
 
 #results {
     overflow-y: scroll;
-    height: 600px;
+    height: 550px;
     border-radius: 5px;
-    background-color: #f7f7f7;
     font-size: 14px;
     font-family: Arial, sans-serif;
+    margin: auto;
+    padding: 20px;
 }
 
 #history {
     overflow-y: scroll;
-    height: 600px;
+    height: 550px;
 }
 
 #history ol {

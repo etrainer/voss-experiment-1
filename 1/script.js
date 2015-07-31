@@ -30,7 +30,7 @@ function createEtherpadID() {
         dataType: 'jsonp', 
         data: 'apikey=' + etherpadKey + '&padID=' + generateUUID() + '&text=' + padText + '&jsonp=?',
         success: function(data) {
-            document.getElementById('etherpad-lite').src = 'http://localhost:9001/p/' + padID + '?showControls=true&showChat=true&showLineNumbers=true&useMonospaceFont=false';
+            document.getElementById('etherpad-lite').src = 'http://localhost:9001/p/' + padID + '?showControls=true&showChat=false&showLineNumbers=true&useMonospaceFont=false';
         }
     });
 
@@ -498,7 +498,7 @@ function reviewHistory() {
 }
 
 function saveHistory() {
-    var answer = confirm('Clicking \"OK\" will send your descriptions on for evaluation.');
+    var answer = confirm('Are you finished with your descriptions?\n\nOnly click \"OK\" when you are done with your descriptions. Click \"Cancel\" to keep working.');
     if (answer) {
         $.ajax({
             url: 'http://localhost:9001/api/1.2.8/getHTML?',

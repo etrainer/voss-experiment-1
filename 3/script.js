@@ -21,6 +21,17 @@ function generateUUID() {
     return uuid;
 }
 
+function getWorkerID() {
+    var q_string = window.location.search.substring(1);
+    var workerID = "";
+    var paramPair = q_string.split('=');
+    if (paramPair[0] == 'mturkworkerID') {
+        if (paramPair[1] != '') {   
+            workerID = paramPair[1];
+        }
+    }
+    return workerID;
+}
 
 function createEtherpadID() {
     var padText = 'Placeholder text';
@@ -28,7 +39,7 @@ function createEtherpadID() {
         url: 'http://localhost:9001/api/1.2.7/createPad?',
         type: 'GET',
         dataType: 'jsonp',
-        data: 'apikey=' + etherpadKey + '&padID=' + generateUUID() + '&text=' + padText + '&jsonp=?',
+        data: 'apikey=' + etherpadKey + '&padID=' + getWorkerID() + '&text=' + padText + '&jsonp=?',
         success: function(data) {
             document.getElementById('etherpad-lite').src = 'http://localhost:9001/p/' + padID + '?showControls=true&showChat=false&showLineNumbers=true&useMonospaceFont=false';
         }
@@ -387,6 +398,10 @@ function setUpForwardLink(event) {
 }
 
 $(document).ready(function() {
+    if (getWorkerID() =='') {
+        document.write("Invalid worker ID detected! Please return to the HIT page and start again.");
+        return;
+    }
     createEtherpadID();
     window.lastFocusStatus = document.hasFocus();
     check();
@@ -497,7 +512,7 @@ function reviewHistory() {
                 var hiddenFieldID = document.createElement("input");
                 hiddenFieldID.setAttribute("type", "hidden");
                 hiddenFieldID.setAttribute("name", "ID");
-                hiddenFieldID.setAttribute("value", padID);
+                hiddenFieldID.setAttribute("value", getWorkerID());
                 form.appendChild(hiddenFieldID);
             
                 var hiddenFieldContent = document.createElement("input");

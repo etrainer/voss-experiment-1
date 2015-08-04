@@ -464,14 +464,12 @@ function check() {
     }
     //It didn't have focus before
     if (document.hasFocus() && firstLoad == false) {
-        console.log("Returned to home page from: " + lastOpenedPage);
-        var historyItem = new HistoryItem(new Date(), "Returned to home page from: " + lastOpenedPage);
+        var historyItem = new HistoryItem(new Date(), "Got focus");
         historyArray.push(historyItem);
-        lastVisitedSite = new VisitedPage(lastOpenedPage);
-        lastVisitedSite.setTimeSpent(new Date() - startTime);
-        pageArray.push(lastVisitedSite);
-        startTime = new Date();
-       // lastOpenedPage = '';
+    }
+    else if (!document.hasFocus() && firstLoad == false) {
+        var historyItem = new HistoryItem(new Date(), "Lost focus");
+        historyArray.push(historyItem);
     }
     lastFocusStatus = !lastFocusStatus;
 }

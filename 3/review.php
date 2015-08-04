@@ -23,7 +23,8 @@
                 fclose($myfile2);
                 
                 foreach ($jsonData as $item) {
-                    echo "<input type='checkbox' name='historyItem[]' checked='checked' value='$item->description'>$item->description<br/>";
+                    if (!($item->description == "Lost focus") && !($item->description == "Got focus"))
+                        echo "<input type='checkbox' name='historyItem[]' checked='checked' value='$item->description'>$item->description<br/>";
                 }
                 echo "<input type='hidden' value='$fileName' name='filename'>";
             }

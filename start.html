@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title></title>
+
+    <script type="text/javascript">
+        function openWindow() {
+            var id = getWorkerID();
+	        if (!(id == "")) {
+                var pageNum = (Math.floor(Math.random() * 3) + 1);
+                var url = pageNum + "/index.html?mturkworkerID=" + id;
+                window.open(url, "_self");
+	        }
+            else
+                document.write("Invalid worker ID detected! Please return to the HIT page and start again.");
+	}
+	function getWorkerID() {
+	    var q_string = window.location.search.substring(1);
+        if (q_string == "")
+            return "";
+        var workerID = "";
+        var paramPair = q_string.split('=');
+        if (paramPair[0] == 'mturkworkerID') {
+            if (paramPair[1] != "")
+                workerID = paramPair[1];
+        }
+	    return workerID;
+	}
+    </script>
+        
+        
+</head>
+
+
+<body onload="openWindow();">
+</body>
+</html>
+

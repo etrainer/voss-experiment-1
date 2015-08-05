@@ -32,13 +32,17 @@ function getWorkerID() {
     return workerID;
 }
 
+function getCondition() {
+    return 1;
+}
+
 function createEtherpadID() {
     var padText = 'Placeholder text';
     $.ajax({
         url: 'http://localhost:9001/api/1.2.7/createPad?',
         type: 'GET',
         dataType: 'jsonp', 
-        data: 'apikey=' + etherpadKey + '&padID=' + getWorkerID() + '&text=' + padText + '&jsonp=?',
+        data: 'apikey=' + etherpadKey + '&padID=' + getWorkerID() + '&jsonp=?',
         success: function(data) {
             document.getElementById('etherpad-lite').src = 'http://localhost:9001/p/' + padID + '?showControls=true&showChat=false&showLineNumbers=true&useMonospaceFont=false';
         }
@@ -402,6 +406,7 @@ $(document).ready(function() {
         document.write("Invalid worker ID detected! Please return to the HIT page and start again.");
         return;
     }
+    getCondition();
     createEtherpadID();
     window.lastFocusStatus = document.hasFocus();
     check();
@@ -536,6 +541,12 @@ function saveHistory() {
                 hiddenFieldID.setAttribute("name", "ID");
                 hiddenFieldID.setAttribute("value", getWorkerID());
                 form.appendChild(hiddenFieldID);
+
+                var hiddenFieldCondition = document.createElement("input");
+                hiddenFieldCondition.setAttribute("type", "hidden");
+                hiddenFieldCondition.setAttribute("name", "condition");
+                hiddenFieldCondition.setAttribute("value", getCondition());
+                form.appendChild(hiddenFieldCondition);
 
                 var hiddenFieldContent = document.createElement("input");
                 hiddenFieldContent.setAttribute("type", "hidden");

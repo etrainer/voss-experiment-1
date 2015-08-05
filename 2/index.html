@@ -12,20 +12,13 @@
             var h = 450;
             var left = (screen.width/2)-(w/2);
             var t = (screen.height/2)-(h/2);
-            var newWindow = window.open('instructions.html', 'myWindow', 'width='+w+',height='+h+',left='+left+',top='+t+',toolbar=no,width=450,height=450,resizable=yes,location=no');
+            var newWindow = window.open('instructions.html', 'myWindow', 'width='+w+',height='+h+',left='+left+',top='+t+',scrollbars=yes,toolbar=no,width=450,height=450,resizable=yes,location=no');
         }
     </script>
 </head>
 
 <body>
     <div id="container">
-        <div class="nav">
-            <div class="container">
-                <ul class="pull-right">
-                    <li><a href="#" onclick="openInstructions(); return false;">Instructions</a></li>
-                </ul>
-            </div>
-        </div>
         <form>
             <img src="search.png" style="display: block; margin-left: auto; margin-right: auto"/>
             <div class="form-group" style="width:55%; margin: 0 auto">
@@ -61,7 +54,12 @@
             </div>
 
             <div class="col-xs-6">
-                <h2>Write Descriptions in this Box</h2>
+                <table style="width: 100%">
+                    <tr>
+                        <td width="75%"><h2>Write Descriptions in this Box</h2>
+                        <td width="25%" style="vertical-align: middle"><span class="nav"><a href="#" onclick="openInstructions(); return false;">Instructions</a></span>
+                    </tr>
+                </table>
                 <iframe id='etherpad-lite' name ='embed_readwrite' width='100%' height=550></iframe>
             </div>
         </div>

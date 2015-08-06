@@ -1,0 +1,53 @@
+#proceed {
+    border-radius: 5px;
+    background-color: #0266c8;
+    width: 55%;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+}
+
+
+#main {
+    border-radius: 5px;
+    background-color: #ffffff;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#main p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #47423F;
+}
+
+.nav a {
+    color: #5a5a5a;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 14px 10px;
+    text-transform: uppercase;
+}
+
+.nav li {
+    display: inline;
+}
+    
+h1 {
+    font-size: 2.5em;
+    font-family: Verdana, Arial, sans-serif;
+    color: black;
+}
+
+.line-separator {
+    height: 1px;
+    width: 80%;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+

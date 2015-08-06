@@ -22,7 +22,7 @@
 
     else {
 	    //redirect to index.html
-	    header("Location: http://home.dev/voss-experiment/start.html?mturkworkerID=$turk_id");
+	    header("Location: http://home.dev/voss-experiment/consent_form.html?mturkworkerID=$turk_id");
 	    die();
     } 
 ?>

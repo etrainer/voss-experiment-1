@@ -51,3 +51,27 @@ body {
     background-color: #f7f7f7;
 }
 
+.descriptions {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.descriptions td, th {
+    word-wrap: break-word;
+}
+/*
+.row-ID {
+    width: 10%;
+}
+*/
+.row-history {
+    width: 30%;
+}
+
+.row-description {
+    width: 40%;
+}
+
+.row-rating {
+    width: 30%;
+}

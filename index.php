@@ -13,7 +13,7 @@
     }
     
     
-    $query = "SELECT * FROM participants WHERE turkID='$turk_id'";
+    $query = "SELECT * FROM descriptions WHERE turkID='$turk_id'";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
@@ -22,7 +22,7 @@
 
     else {
 	    //redirect to index.html
-	    header("Location: http://home.dev/voss-experiment/consent_form.html?mturkworkerID=$turk_id");
+	    header("Location: http://home.dev/voss-experiment/consent_form_descriptions.html?mturkworkerID=$turk_id");
 	    die();
     } 
 ?>

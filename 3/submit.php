@@ -23,7 +23,7 @@
                 $edited_history_str .= $item . "\n";
         }
         
-        $query = "SELECT * FROM `participants` WHERE `turkID`='$turk_id'";
+        $query = "SELECT * FROM `descriptions` WHERE `turkID`='$turk_id'";
         $result = $conn->query($query);
 
         if ($result->num_rows > 0) {
@@ -31,7 +31,7 @@
             die();
         }
 
-        $sql = "INSERT INTO `participants` (`turkID`, `condition`, `history`, `editedHistory`, `description`) VALUES ('$turk_id', '$condition', '$history', '$edited_history_str', '$content')";
+        $sql = "INSERT INTO `descriptions` (`turkID`, `condition`, `history`, `editedHistory`, `description`) VALUES ('$turk_id', '$condition', '$history', '$edited_history_str', '$content')";
         if ($conn->query($sql) == TRUE) {
             echo "Your descriptions and edited search history have been sent! To finish this task, take a short survey: ";
         }

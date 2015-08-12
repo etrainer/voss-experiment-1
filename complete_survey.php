@@ -13,16 +13,16 @@
     }
     
     
-    $query = "SELECT `takenSurvey` FROM `participants` WHERE `turkID`='$turk_id'";
+    $query = "SELECT `takenSurvey` FROM `descriptions` WHERE `turkID`='$turk_id'";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
        if ($row = $result->fetch_assoc()) {
             if ($row["takenSurvey"] == NULL || $row["takenSurvey"] == 0) {
  
-                $sql = "UPDATE `participants` SET `takenSurvey`=1 WHERE `turkID`='$turk_id'";
+                $sql = "UPDATE `descriptions` SET `takenSurvey`=1, `isEvaluated`=0 WHERE `turkID`='$turk_id'";
                 if ($conn->query($sql) == TRUE) {
-                    echo "You have successfully completed this HIT. Thank you for your participation!";
+                    echo "You have successfully completed this HIT. Thank you for your participation! Please close this browser window.";
                     die();
                 }
                 else 

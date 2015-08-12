@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+    <title>Consent Form</title>
+    <link type='text/css' rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'/>
+    <link type='text/css' rel='stylesheet' href='style.css'/>
+    <script type='text/javascript'>
+
+        function yesNoAgeCheck() {
+            if (document.getElementById('yesAgeCheck').checked) {
+                document.getElementById('ifAge').style.display = 'block';
+            }
+            else {
+                document.getElementById('ifAge').style.display = 'none';
+                document.getElementById('ifUnderstand').style.display = 'none';
+                document.getElementById('button').style.display = 'none';
+            }
+
+        }   
+
+        function yesNoUnderstandCheck() {
+            if (document.getElementById('yesUnderstandCheck').checked) {
+                document.getElementById('ifUnderstand').style.display = 'block';
+            }
+            else {
+                document.getElementById('ifUnderstand').style.display = 'none';
+                document.getElementById('button').style.display = 'none';
+            }
+
+        }   
+
+
+        function yesNoParticipateCheck() {
+            if (document.getElementById('yesParticipateCheck').checked) {
+                document.getElementById('button').style.display = 'block';
+            }
+            else
+                document.getElementById('button').style.display = 'none';
+        }
+
+        function getWorkerID() {
+            var q_string = window.location.search.substring(1);
+            if (q_string == "")
+                return "";
+            var workerID = "";
+            var paramPair = q_string.split('=');
+            if (paramPair[0] == 'mturkworkerID') {
+                if (paramPair[1] != "")
+                    workerID = paramPair[1];
+            }
+            return workerID;
+        }
+
+        function continueToStudy() {
+            window.open("http://home.dev/voss-experiment/start.html?mturkworkerID=" + getWorkerID(), "_self");
+        }
+
+    </script>
+
+</head>
+<body>
+    <div id="main">
+        <h1 style="text-align: center">Study Consent Form</h1>
+        <hr/>
+        <p>This task is part of a research study conducted by Laura Dabbish and James Herbsleb at Carnegie Mellon University.</p>  
+        <p>The purpose of the research is to understand online work environments.</p>
+
+        <h3>Procedures</h3>
+        <p>You will be asked to evaluate the work of others. You will be expected to review their already completed work and answer some questions about it and provide comments about the work. The amount of time you spend beyond the minimum contribution is up to you, but you may be rewarded more if your comments reach a higher quality.</p>
+        <p>You will be asked to complete questionnaire items about your experiences during the task.</p>
+
+
+        <h3>Participant Requirements</h3>  
+        <p>Participation in this study is limited to individuals age 18 and older.</p>
+
+        <h3>Risks</h3>
+        <p>The risks and discomfort associated with participation in this study are no greater than those ordinarily encountered in daily life or during other online activities.</p>
+
+        <h3>Benefits</h3>
+        <p>There may be no personal benefit from your participation in the study but the knowledge received may be of value to humanity.</p>
+
+        <h3>Compensation & Costs</h3>
+        <p>You will be paid for participation.  The amount of your reward may be based on your performance and the quality of the work you do. There will be no cost to you if you participate in this study.</p> 
+
+        <h3>Confidentiality</h3>
+        <p>The data captured for the research includes your name and email address only if you are willing to provide it.</p> 
+
+        <h3>Voluntary Participation</h3>
+        <p>Your participation in this research is voluntary.  You may discontinue participation at any time during the research activity.  If you have any questions about the research you should contact Laura Dabbish at dabbish@cs.cmu.edu.</p>
+        <hr/>
+        <div id="proceed">
+            I am age 18 or older.&nbsp;&nbsp; <input type="radio" onclick="yesNoAgeCheck();" name="yesNoAge" id="yesAgeCheck"> Yes&nbsp;&nbsp;<input type="radio" onclick="yesNoAgeCheck();" name="yesNoAge" id="noAgeCheck"> No
+            <div id = "ifAge" style="display:none">
+                I have read and understand the information above.&nbsp;&nbsp;<input type="radio" onclick="yesNoUnderstandCheck();" name="yesNoUnderstand" id="yesUnderstandCheck"> Yes&nbsp;&nbsp;<input type="radio" onclick="yesNoUnderstandCheck();" name="yesNoUnderstand" id="noUnderstandCheck"> No
+            </div>
+            <div id = "ifUnderstand" style="display:none">
+                I want to participate in this research and continue with the HIT.&nbsp;&nbsp; <input type="radio" onclick="yesNoParticipateCheck();" name="yesNoParticipate" id="yesParticipateCheck"> Yes&nbsp;&nbsp;<input type="radio" onclick="yesNoParticipateCheck();" name="yesNoParticipate" id="noParticipateCheck"> No
+            </div>
+            <div id = "button" style="display: none">
+                <button style="border-radius: 5px; background-color: white; color: #4d4d4d; display: block; margin: 0 auto;" onclick="continueToStudy()">Continue</button>
+            </div>
+        </div>
+    </div>
+    <br/><br/><br/>
+</body>
+</html>

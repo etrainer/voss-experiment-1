@@ -44,7 +44,18 @@
         $prettyHistory .= "<li>$explodedHistory[$x]</li>";
     $prettyHistory .= "</ol>";
     $description_id = $rowArray[$randNum]['descriptionID'];
+    
+    $description = $rowArray[$randNum]['description'];
 
+    $pattern = '\<\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-[\w\s]+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\>';
+    $description_elements = preg_split("/" . $pattern . "/", $description);
+
+    $description_str = "";
+    foreach ($description_elements as $item) {
+        $temp = trim(strip_tags($item));
+        if ($temp != "")
+            $description_str .= "<p>" . $temp . "</p>";
+    }
 ?>
 <!doctype html>
 <html>
@@ -71,7 +82,7 @@
             <tr>
                 <!--<td>1</td>-->
                 <td><?php echo $prettyHistory ?></td>
-                <td><?php echo $rowArray[$randNum]['description']?></td>
+                <td><?php echo $description_str?></td>
                 <td>
                     <span class="star-rating">
                         <input type="radio" name="rating" value="1"><i></i>

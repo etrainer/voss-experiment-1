@@ -12,7 +12,7 @@
             var h = 450;
             var left = (screen.width/2)-(w/2);
             var t = (screen.height/2)-(h/2);
-            var newWindow = window.open('instructions.html', 'myWindow', 'width='+w+',height='+h+',left='+left+',top='+t+',scrollbars=yes,toolbar=no,width=450,height=450,resizable=yes,location=no');
+            var newWindow = window.open('instructions.html', 'myWindow', 'width='+w+',height='+h+',left='+left+',top='+t+',scrollbars=yes,toolbar=no,resizable=yes,location=no');
         }
     </script>
 </head>
@@ -57,8 +57,8 @@
             <div class="col-xs-6">
                 <table style="width: 100%">
                     <tr>
-                        <td width="75%"><h2>Write Descriptions in this Box</h2>
-                        <td width="25%" style="vertical-align: middle"><span class="nav"><a href="#" onclick="openInstructions(); return false;">Instructions</a></span>                     
+                        <td width="75%"><h2>Write Descriptions in this Box</h2></td>
+                        <td width="25%" style="vertical-align: middle"><span class="nav"><a href="#" onclick="openInstructions(); return false;">Instructions</a></span></td>                     
                     </tr>
                 </table>
             <iframe id='etherpad-lite' name ='embed_readwrite' width='100%' height=550></iframe>

@@ -7,7 +7,6 @@
     color: white;
 }
 
-
 #main {
     border-radius: 5px;
     background-color: #ffffff;
@@ -15,19 +14,17 @@
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-}
-
-#main p {
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: #47423F;
 }
 
+
 .nav a {
-    color: #5a5a5a;
+    color: red;
     font-size: 11px;
     font-weight: bold;
-    padding: 14px 10px;
+    padding: 14pc 10px;
     text-transform: uppercase;
 }
 
@@ -54,10 +51,14 @@ body {
 .descriptions {
     table-layout: fixed;
     width: 100%;
+    border-collapse: collapse;
+    border-style: hidden;
 }
 
 .descriptions td, th {
     word-wrap: break-word;
+    border: 1px solid black;
+    padding: 10px;
 }
 /*
 .row-ID {

@@ -18,11 +18,17 @@
             if ($conn->query($sql) == TRUE) {
                 echo "Your ratings have been sent! To finish this task, take a short survey: ";
             }
+            else {
+                echo "Error: could not update descriptions.";
+            }
         } 
         else {
             echo "Error: " . $sql . "<br/>" . $conn->error;
         }
 
+    }
+    else {
+        echo "Error: POST variables not set.";
     }
 
 ?>
